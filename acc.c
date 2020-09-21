@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
-  printf("Hello\n");
   if (argc != 2) {
     fprintf(stderr, "error: incollect arg number\n");
     return 1;
