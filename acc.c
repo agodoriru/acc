@@ -1,7 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-printf("Hello\n");
-	 		return 0;
+int main(int argc, char **argv) {
+  printf("Hello\n");
+  if (argc != 2) {
+    fprintf(stderr, "error: incollect arg number\n");
+    return 1;
+  }
+  printf(".intel_syntax noprefix\n");
+  printf(".globl main\n");
+  printf("main:\n");
+  printf("  mov rax, %d\n", atoi(argv[1]));
+  printf("  ret\n");
+  return 0;
 }
